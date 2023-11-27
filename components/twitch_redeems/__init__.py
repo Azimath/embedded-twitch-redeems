@@ -7,7 +7,7 @@ from esphome.const import (
     CONF_TRIGGER_ID
 )
 from esphome.core import CORE
-from components import oauth_web_handler
+from esphome.components import oauth_web_handler
 
 CONF_ON_REDEEM_ID = "on_redeem_id"
 CONF_REDEEM_ID = "redeem_id"
