@@ -1,0 +1,41 @@
+esphome:
+  name: "twitch-candy-dispenser"
+  name_add_mac_suffix: false
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+external_components:
+  - source: 
+      type: local
+      path: components
+    components: [ oauth_web_handler, twitch_redeems ]
+
+logger:
+
+wifi:
+  ssid: "SSID"
+  password: "password"
+  ap:
+    
+captive_portal:
+
+ota:
+
+web_server:
+
+oauth_web_handler:
+  id: oauth
+  
+twitch_redeems:
+  #oauth_component: oauth
+  on_redeem_id:
+    redeem_id: asdf
+    then:
+      - logger.log: "Got ID"
+  on_redeem_contains:
+    redeem_contains: candy
+    then:
+      - logger.log: "Got contains"
